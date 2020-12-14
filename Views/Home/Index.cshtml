@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Find a Number in an Index";
+}
+
+
+@using (Html.BeginForm("index", "Home"))
+{
+    <script>
+        function myhref() {
+            var number1 = document.getElementById("firstnumber").value;
+            var number2 = document.getElementById("secondnumber").value;
+            var indexnumber = document.getElementById("numberindex").value;
+
+            location.href = '/home/WebApi/?data1=' + number1 + '&data2=' + number2 + '&data3=' + indexnumber;
+        }
+    </script>
+
+    <form>
+        <h3>Enter 2 Numbers to Create a Set Range of Numbers.</h3>
+        Enter the First Number in a Number Set:  <input type="text" id="firstnumber" /> <br /><br />
+        Enter the Last Number of a Number  Set: <input type="text" id="secondnumber" /> <br /><br />
+
+        <h3>Enter the Index Number to Find your Value:</h3>
+        Enter the Index Position of a Number Set to Find its Number Value: <input type="text" id="numberindex" /><br /><br />
+
+        <input id="Button1" type="button" value="Click here for passing the parameter" onClick="myhref()" />
+    </form>
+}
